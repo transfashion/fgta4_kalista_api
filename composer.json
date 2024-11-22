@@ -1,0 +1,16 @@
+{
+    "name": "transfashion/kalistaapi",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Transfashion\\KalistaApi\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Agung Nugroho",
+            "email": "agung@transfashionindonesia.com"
+        }
+    ],
+    "require": {}
+}

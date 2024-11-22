@@ -1,0 +1,12 @@
+Options -Indexes
+Options +FollowSymlinks
+RewriteEngine On
+
+php_value session.save_path "/tmp"
+
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_FILENAME} !-f 
+
+RewriteRule ^(.+)$ index.php?apireq=$1 [QSA,L]
+
+

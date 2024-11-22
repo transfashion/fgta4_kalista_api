@@ -1,3 +1,5 @@
 config-production.php
+allowed-apps.php
 
 
+/vendor/
