@@ -4,12 +4,21 @@ namespace Transfashion\KalistaApi;
 
 class Session extends Api {
 
+	public function VerifyRequest(string $functionname, string $jsonTextData, array $headers) : void {
+		try {
+			$appid = $headers['App-Id'];
+			$secret = $headers['App-Secret'];
+			$codeVerifier = $headers['Code-Verifier'];
 
-	public function VerifyRequest(string $functionname, string $headers, string $jsonTextData) : bool {
-		return true;
+			if (!Api::IsValidCodeVerifier($codeVerifier, $appid, $secret, $jsonTextData)) {
+				throw new \Exception("your data authentication is invalid", 403);
+			}
+		} catch (\Exception $ex) {
+			throw $ex;
+		}
 	}
 
-
+	
 	/**
 	 * @ApiMethod
 	 */

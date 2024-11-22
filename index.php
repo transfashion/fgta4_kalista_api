@@ -83,7 +83,7 @@ try {
 
 
 	// verify request
-	$api->VerifyRequest($functionname, $headers, $jsonData);
+	$api->VerifyRequest($functionname, $jsonData, $headers);
 
 
 	$request = json_decode($jsonData, true);
