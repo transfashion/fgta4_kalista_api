@@ -1,0 +1,8 @@
+Array
+(
+    [phone_number] => 6285885525565
+    [message] => ini saya lagi lakukan beberapa testing ya, abaikan saja
+    [room_id] => 57278907
+    [from_name] => Agung N
+    [intent] => #TestingApiKalista
+)

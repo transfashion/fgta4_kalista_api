@@ -4,12 +4,56 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "566ab70ae1d0cdfba81fcf9fb93d0472",
-    "packages": [],
+    "content-hash": "a025d6553caa8b0e5302c1faca44f427",
+    "packages": [
+        {
+            "name": "agungdhewe/phpsqlutil",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/agungdhewe/phpsqlutil.git",
+                "reference": "7de55b0ff059a3e55799ec2e02e89fb4d144393f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/agungdhewe/phpsqlutil/zipball/7de55b0ff059a3e55799ec2e02e89fb4d144393f",
+                "reference": "7de55b0ff059a3e55799ec2e02e89fb4d144393f",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "AgungDhewe\\PhpSqlUtil\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Agung Nugroho",
+                    "email": "agung.dhewe@gmail.com"
+                }
+            ],
+            "description": "Utility for create SQL insert, update and delete",
+            "support": {
+                "issues": "https://github.com/agungdhewe/phpsqlutil/issues",
+                "source": "https://github.com/agungdhewe/phpsqlutil/tree/main"
+            },
+            "time": "2024-11-23T15:09:27+00:00"
+        }
+    ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "agungdhewe/phpsqlutil": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

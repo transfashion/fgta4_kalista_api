@@ -3,7 +3,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 use Transfashion\KalistaApi\Configuration;
 use Transfashion\KalistaApi\Api;
-use Transfashion\KalistaApi\Session;
+use Transfashion\KalistaApi\Log;
 
 // script ini hanya dijalankan di web server
 if (php_sapi_name() === 'cli') {
@@ -38,7 +38,12 @@ try {
 		throw new \Exception("$configpath not found", 500);
 	}
 
+	Configuration::setRootDir(__DIR__);
 	require_once $configpath;
+
+	$logoutput = Configuration::Get('Log.Output') ?? join(DIRECTORY_SEPARATOR, [__DIR__, 'output', 'log.txt']); // default output/log.txt
+	$logmaxsize = Configuration::Get('Log.MaxSize') ?? 10485760; // default 10M
+	Log::setOutput($logoutput, $logmaxsize);
 
 	$allowedapp_data_path = join(DIRECTORY_SEPARATOR, [__DIR__, 'allowed-apps.php']);
 	if (!is_file($allowedapp_data_path)) {
@@ -46,36 +51,38 @@ try {
 	}
 	require_once $allowedapp_data_path;
 
-	Configuration::setRootDir(__DIR__);
+	
 
 	$apireq = array_key_exists('apireq', $_GET) ? trim($_GET['apireq'], '/') : null;
 	if ($apireq==null) {
 		throw new \Exception("Invalid Request", 403);
 	}
+	Log::setRequest($apireq);
+
 
 	$classname = str_replace("/", "\\", (dirname($apireq)));
 	$functionname = basename($apireq);
 
 	if (!class_exists($classname)) {
-		throw new \Exception("Class $classname not found", 404);
+		$errmsg = Log::access("Class $classname not found");
+		throw new \Exception($errmsg , 404);
 	}
 
 	if (!is_subclass_of($classname, Api::class)) {
-		throw new \Exception("Class $classname is not ApiClass", 400);
+		$errmsg = Log::access("Class $classname is not ApiClass");
+		throw new \Exception($errmsg, 400);
 	}
 
 	$api = new $classname;
 
-
+	
 
 	// cek apakah header cocok
 	$headers = getallheaders();
 	$app_id =  array_key_exists('App-Id', $headers) ? $headers['App-Id'] : "";
 	$app_secret =  array_key_exists('App-Secret', $headers) ? $headers['App-Secret'] : "";
 
-	if (!Configuration::isValidApp($app_id, $app_secret)) {
-		throw new \Exception("Not Allowed invalid applications", 403);
-	}
+	$api->VerifyApplication($app_id, $app_secret);
 
 
 	// data yang dikirim melalui POST
@@ -86,25 +93,35 @@ try {
 	$api->VerifyRequest($functionname, $jsonData, $headers);
 
 
+
 	$request = json_decode($jsonData, true);
 	if (json_last_error() !== JSON_ERROR_NONE) {
-		throw new \Exception("Invalid request data: " . json_last_error_msg(), 400);
+		$errmsg = Log::access("Invalid request data: " . json_last_error_msg());
+		throw new \Exception($errmsg, 400);
 	}
 
 	if (!array_key_exists('request', $request)) {
-		throw new \Exception("'request' key data is not exist is not available in posted json", 400);
+		$errmsg = Log::access("'request' key data is not exist is not available in posted json");
+		throw new \Exception($errmsg, 400);
 	}
 	$receiveParameters = $request['request'];
 
 
 	// get executed method information
+	if (!method_exists($classname, $functionname)) {
+		$errmsg = Log::access("Method '$functionname' is not found in '$classname'");
+		throw new \Exception($errmsg, 400);
+	};
+
 	$refl = new \ReflectionMethod($classname, $functionname);
 	$docComment = $refl->getDocComment();
 	if (empty($docComment)) {
-		throw new \Exception("$classname::$functionname is not api method ", 400);
+		$errmsg = Log::access("$classname::$functionname is not api method ");
+		throw new \Exception($errmsg, 400);
 	}
 	if (strpos($docComment, '@ApiMethod') == false) {
-		throw new \Exception("$classname::$functionname is not api method ", 400);
+		$errmsg = Log::access("$classname::$functionname is not api method ");
+		throw new \Exception($errmsg, 400);
 	}
 
 	$funcparams = $refl->getParameters();
@@ -112,7 +129,10 @@ try {
 	foreach ($funcparams as $param) {
 		$paramname = $param->getName();
 		if (!array_key_exists($paramname, $receiveParameters)) { // cek apakah $paramname dikirim dari POST $receiveParameters
-			throw new \Exception("parameter $paramname tidak ditemukan di data yang dikirimkan", 400);
+			$errmsg = Log::access("parameter $paramname tidak ditemukan di data yang dikirimkan");
+			$serializedparam = print_r($receiveParameters, true);
+			Log::debug($serializedparam);
+			throw new \Exception($errmsg, 400);
 		}
 		$executeParameters[] = $receiveParameters[$paramname];
 	}
@@ -133,23 +153,22 @@ try {
 
 	header("HTTP/1.1 $errCode $errHeaderMessage");
 } finally {
-	$res = json_encode([
+	$res = [
 		'code' => $errCode,
 		'errormessage' => $errMessage,
 		'response' => $result
-	]);
+	];
 	$response = json_encode($res);
-
-	header('Content-Type: application/json');
 	$output = ob_get_contents();
 	ob_end_clean();
 
 	if (!empty($output)) {
 		echo $output;
+		echo "\n\n";
 	} else {
-		echo stripslashes($response);
+		header('Content-Type: application/json');
+		echo $response;
 	}
-	echo "\n\n";
 }
 
 

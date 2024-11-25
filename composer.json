@@ -12,5 +12,7 @@
             "email": "agung@transfashionindonesia.com"
         }
     ],
-    "require": {}
+    "require": {
+        "agungdhewe/phpsqlutil": "@dev"
+    }
 }

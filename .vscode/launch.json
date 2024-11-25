@@ -5,14 +5,20 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "Listen for Xdebug",
+			"name": "Xdebug Docker",
 			"type": "php",
 			"request": "launch",
 			"port": 9132,
 			"pathMappings": {
 				"/var/www/html/public/api" : "/home/agung/Development/transfashion/fgta4_kalista_api"
 			}
+		},
 
+		{
+			"name": "Xdebug Host",
+			"type": "php",
+			"request": "launch",
+			"port": 9003
 		}
 	]
 }

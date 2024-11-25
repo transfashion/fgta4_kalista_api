@@ -1,13 +1,17 @@
 <?php
 
-$endpoint = "https://kalista.localhost/api/Transfashion/KalistaApi/Session/RegisterExternalSession";
+$endpoint = "https://agung.tfi.fgta.net/kalista/api/Transfashion/KalistaApi/Whatsapp/CustomerLogin";
 
 
 // Data yang akan dikirim
 $data = [
 	"request" => [
 		"payload" => [
-			"sessid" => "4444" // external session id yang dikirim dari applikasi
+			"phone_number" => "6285885525565",
+			"message"=> "Hai Transfashion, Saya ingin #login-via-whatsapp ke website transfashion.id [ref:cde19f67e13f86a5172695473aafaa2f]",
+			"room_id"=> "57278907",
+			"from_name"=> "Agung Nugroho",
+			"intent"=> "#login-via-whatsapp"
 		]
 	]
 ];
@@ -25,6 +29,8 @@ curl_setopt($ch, CURLOPT_NOBODY, false);        // Tetap sertakan body (ubah ke 
 curl_setopt($ch, CURLOPT_POST, true); // Menggunakan metode POST
 curl_setopt($ch, CURLOPT_HTTPHEADER, [
     "Content-Type: application/json", // Header untuk JSON
+	"App-Id: qiscus",
+	"App-Secret: 47e657fqyr47dn38dj",
     "Content-Length: " . strlen($jsonData)
 ]);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData); // Data yang dikirim

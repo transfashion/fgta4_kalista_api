@@ -5,12 +5,16 @@ use Transfashion\KalistaApi\Configuration;
 Configuration::Set([
 	
 	'DbMain' => [
-		'DSN' => "mysql:host=127.0.0.1;dbname=mydb",
+		'DSN' => "mysql:host=172.18.20.249;dbname=tfidblocal",
 		'user' => "root",
-		'pass' => ""
+		'pass' => "rahasia123!"
 	],
 
-	
+	'Qiscus' => [
+		'Url' => '',
+		'Sender' => '',
+		'Secret' => ''
+	]
 	
 ]);
 
