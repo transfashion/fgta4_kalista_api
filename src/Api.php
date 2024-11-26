@@ -33,4 +33,28 @@ abstract class Api {
 	public static function Hit($endpoint, $param, $headers) : void {
 
 	}
+
+
+
+
+	protected static function DoSimpleVerification(string $jsonTextData, array $headers) : void {
+		try {
+			// cek timestamp
+			// jika timestamp sudah terlalu lama, throw expired request
+
+			// verify tx
+			// jika appid dan tx sudah ada di db, throw duplicate execution
+
+			// cek code verifier
+			$appid = array_key_exists('App-Id', $headers) ?  $headers['App-Id'] : '';
+			$secret = array_key_exists('App-Secret', $headers) ? $headers['App-Secret'] : '';
+			$codeVerifier = array_key_exists('Code-Verifier', $headers) ? $headers['Code-Verifier'] : '';
+			if (!Api::IsValidCodeVerifier($codeVerifier, $appid, $secret, $jsonTextData)) {
+				throw new \Exception("your data authentication is invalid", 403);
+			}
+		} catch (\Exception $ex) {
+			throw $ex;
+		}
+	}
+
 }	

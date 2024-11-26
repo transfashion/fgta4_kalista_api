@@ -24,18 +24,29 @@ require_once $configpath;
 $logoutput = Configuration::Get('Log.Output') ?? join(DIRECTORY_SEPARATOR, [__DIR__, '..', 'output', 'log.txt']); // default output/log.txt
 $logmaxsize = Configuration::Get('Log.MaxSize') ?? 10485760; // default 10M
 Log::setOutput($logoutput, $logmaxsize);
-
+Log::setRequest(basename(__FILE__));
 
 
 $qiscusConfig = Configuration::Get('Qiscus');
-$qiscus_url = $qiscusConfig['Url'];
-$qiscus_sender = $qiscusConfig['Sender'];
-$qiscus_secret = $qiscusConfig['Secret'];
+$url = $qiscusConfig['Url'];
+$appcode = $qiscusConfig['AppCode'];
+$secret = $qiscusConfig['AppSecret'];
+$sender = $qiscusConfig['Sender'];
 $room_id = '57278907';
 
 
-Qiscus::Setup($qiscus_url, $qiscus_sender, $qiscus_secret);
-Qiscus::SendText($room_id, "test message");
-Qiscus::Resolve($room_id);
+try {
+	Qiscus::Setup($url, $appcode, $secret, $sender);
+	Qiscus::SendText($room_id, "test message");
+	Qiscus::Resolve($room_id);
+	
+
+} catch (Exception $ex) {
+	echo "ERROR.\n";
+	echo $ex->getMessage();
+} finally {
+	echo "\n\n\n";
+}
+
 
 

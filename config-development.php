@@ -2,7 +2,7 @@
 
 use Transfashion\KalistaApi\Configuration;
 
-Configuration::Set([
+Configuration::Setup([
 	
 	'DbMain' => [
 		'DSN' => "mysql:host=172.18.20.249;dbname=tfidblocal",
@@ -11,10 +11,12 @@ Configuration::Set([
 	],
 
 	'Qiscus' => [
-		'Url' => '',
-		'Sender' => '',
-		'Secret' => ''
+		'Url' => 'https://omnichannel.qiscus.com',
+		'AppCode' => 'zear-ekayinjcwao90mmn',
+		'AppSecret' => 'fb59bccf523e8974f207d51f974cb3ba',
+		'Sender' => 'zear-ekayinjcwao90mmn_admin@qismo.com',
 	]
+	
 	
 ]);
 

@@ -1,30 +1,40 @@
 <?php
 
-$endpoint = "https://kalista.localhost/api/Transfashion/KalistaApi/Session/RegisterExternalSession";
+$endpoint = "https://agung.tfi.fgta.net/kalista/api/Transfashion/KalistaApi/Session/GetCustomerLogin";
+
+$kalista_sessid = "cde19f67e13f86a5172695473aafaa2f";
+$AppId = "transfashionid";
+$AppSecret = "n3k4n2fdmf3fse";
+$txid = uniqid();
+$datetime = new \DateTime("now", new \DateTimeZone("UTC"));
+
 
 
 // Data yang akan dikirim
 $data = [
 	"request" => [
-		"payload" => [
-			"sessid" => "4444" // external session id yang dikirim dari applikasi
-		]
+		"sessid" => $kalista_sessid
 	]
 ];
 
 // Mengonversi data menjadi JSON
 $jsonData = json_encode($data);
 
+// Buat Code Verifier
+$codeVerifier = hash_hmac('sha256', join(":", [$AppId, $jsonData]), $AppSecret);
+
+
 // Inisialisasi cURL
 $ch = curl_init($endpoint);
-
-// Mengatur opsi cURL
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // Menerima output sebagai string
 curl_setopt($ch, CURLOPT_HEADER, true);         // Sertakan header dalam output
 curl_setopt($ch, CURLOPT_NOBODY, false);        // Tetap sertakan body (ubah ke true jika hanya butuh header)
 curl_setopt($ch, CURLOPT_POST, true); // Menggunakan metode POST
 curl_setopt($ch, CURLOPT_HTTPHEADER, [
     "Content-Type: application/json", // Header untuk JSON
+	"App-Id: $AppId",
+	"App-Secret: $AppSecret",	
+	"Code-Verifier: $codeVerifier",
     "Content-Length: " . strlen($jsonData)
 ]);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData); // Data yang dikirim

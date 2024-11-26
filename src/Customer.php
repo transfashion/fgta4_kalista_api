@@ -2,8 +2,13 @@
 namespace Transfashion\KalistaApi;
 
 use AgungDhewe\PhpSqlUtil\SqlSelect;
+use AgungDhewe\PhpSqlUtil\SqlInsert;
 
-final class Customer {
+final class Customer extends Api {
+
+	const ACCESSTYPE_WHATSAPP = "WA";
+	const ACCESSTYPE_EMAIL = "EMAIL";
+
 
 	public string $Id;
 	public string $Name;
@@ -64,7 +69,35 @@ final class Customer {
 		}
 	}
 
-	public static final function CreateNew(string $accessid, string $name) : Customer {
+	public static final function CreateNewByAccess(string $accesstype, string $accessid, string $name) : Customer {
+		try {
+			$db = Database::GetConnection(Configuration::DB_MAIN);
+
+			// buat dulu master customer di mst_cust
+			$obj = new \stdClass;
+			$obj->cust_id = uniqid();
+			$obj->cust_name = $name;
+			$obj->_createby = 'SYSTEM';
+
+			if ($accesstype==self::ACCESSTYPE_WHATSAPP) {
+				$obj->cust_phone = $accessid;
+			} else if ($accesstype==self::ACCESSTYPE_EMAIL) {
+				$obj->cust_email = $accessid;
+			} else {
+				throw new \Exception("Access type is invalid");
+			}
+
+			$cmd = new SqlInsert("mst_cust", $obj);
+			$sql = $cmd->getSqlString();
+			$stmt = $db->prepare($sql);
+
+
+			
+		} catch (\Exception $ex) {
+			throw $ex;
+		}	
+
+
 		$c = new Customer();
 		return $c;		
 	}

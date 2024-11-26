@@ -8,11 +8,14 @@ final class Whatsapp extends Api {
 
 
 	public function VerifyRequest(string $functionname, string $jsonTextData, array $headers) : void {
+		// tidak perlu melakukan verifikasi untuk consume Api ini
 	}
 
 	private function parseMessage(string $message) : array {
 		try {
 			// parse message
+			// contoh format message:
+			// Hai Transfashion, Saya ingin #login-via-whatsapp ke website transfashion.id [ref:cde19f67e13f86a5172695473aafaa2f]	
 			$cleanedInput = str_replace("\n", " ", $message);
 			$pattern = '/#([\w-]+)|\[(.*?)\]/';
 			preg_match_all($pattern, $cleanedInput, $matches);
@@ -38,53 +41,9 @@ final class Whatsapp extends Api {
 	/**
 	 * @ApiMethod
 	 * 
-	 */
-	public final function GetCustomerLoginSession(string $sessid) : array { 
-		session_id($sessid);
-		session_start();
-
-		$result = [];
-
-
-		try {
-			if (!array_key_exists('cust_id', $_SESSION)) {
-				throw new \Exception("No user login information, or user is not logged in yet");
-			}
-
-			$customer = [
-				'id' => $_SESSION['cust_id'] ?? null,
-				'name' => $_SESSION['cust_name'] ?? null,
-				'phone' => array_key_exists('cust_phone', $_SESSION) ? $_SESSION['cust_phone'] : null,
-				'email' => array_key_exists('var', $_SESSION) ? $_SESSION['cust_email'] : null,
-				'gender' => array_key_exists('gender_id', $_SESSION) ? $_SESSION['gender_id'] : null,
-				'birthdate' => array_key_exists('cust_birthdate', $_SESSION) ? $_SESSION['cust_birthdate'] : null,
-				'custaccess_code' => array_key_exists('custaccess_code', $_SESSION) ? $_SESSION['custaccess_code'] : null,
-				'custaccesstype_id' => array_key_exists('custaccesstype_id', $_SESSION) ? $_SESSION['custaccesstype_id'] : null,
-			];
-
-			$result = [
-				'success' => true,
-				'errormessage' => '',
-				'data' => $customer
-			];
-		} catch (\Exception $ex) {
-			$result = [
-				'success' => false,
-				'errormessage' => $ex->getMessage(),
-				'data' => null
-			];
-
-		} finally {
-			return $result;
-		}
-	}
-
-	/**
-	 * @ApiMethod
-	 * 
 	 * ini di hit dari qiscus, saat ada customer send message login ke channel Transfashion
 	 */
-	public final function CustomerLogin(array $payload) : void {
+	public final function CustomerLogin(array $payload) : array {
 		try {
 
 			$cfgkey = Configuration::GetUsedConfig(Configuration::DB_MAIN);
@@ -100,13 +59,12 @@ final class Whatsapp extends Api {
 			$room_id =  array_key_exists('room_id', $payload) ? $payload['room_id'] : '';
 	
 	
-			Log::info("receive message: $message");
+			Log::info("[$phone_number] receive message: $message");
 			if ($intent!=self::LOGIN_INTENT) {
-				$errmsg = Log::warning("intent data yg dikirim '$intent' tidak sesuai");
+				$errmsg = Log::warning("[$phone_number] intent data yg dikirim '$intent' tidak sesuai");
 				throw new \Exception($errmsg, 400);
 			}
 	
-			$loginSuccess = false;
 			$isValidMessage = false;
 			$metadata = $this->parseMessage($message);
 
@@ -120,6 +78,7 @@ final class Whatsapp extends Api {
 			$replyMessage = '';
 			if (!$isValidMessage) {
 				$replyMessage = "Message Format for login is not valid";
+				Log::warning("[$phone_number] message is not valid.");
 			} else {
 				$kalista_sessid = $metadata['ref'];
 				session_id($kalista_sessid);
@@ -127,7 +86,10 @@ final class Whatsapp extends Api {
 				if (array_key_exists('external_callback_url', $_SESSION)) {
 					$cust=Customer::GetCustomerByAccess($phone_number);
 					if (!$cust) {
-						$cust=Customer::CreateNew($phone_number, $from_name);
+						Log::info("[$phone_number] is new customer, create new customer");
+						$cust=Customer::CreateNewByAccess(Customer::ACCESSTYPE_WHATSAPP, $phone_number, $from_name);
+					} else {
+						Log::info("[$phone_number] number found is customer database.");
 					}
 
 					$external_callback_url = $_SESSION['external_callback_url'];
@@ -139,23 +101,30 @@ final class Whatsapp extends Api {
 					$_SESSION['cust_birthdate'] = $cust->BirthDate;
 					$_SESSION['custaccess_code'] = $cust->CustAccessId;
 					$_SESSION['custaccesstype_id'] = $cust->CustAccessType;
-					$loginSuccess=true;
-					$replyMessage = "Login success, please back to previous page, or you can click $external_callback_url?id=$kalista_sessid ";
+					$replyMessage = "Login success, please back to previous page, or you can click $external_callback_url?id=$kalista_sessid (valid for 3 minutes)";
+					Log::info("[$phone_number] Login success");
 				} else {
 					$replyMessage = "login via whatssapp fail, please try again later";
+					Log::warning("[$phone_number] Login fail, cek session kalista: $kalista_sessid");
+					Log::debug(print_r($_SESSION, true));
 				}
 			} 
 	
-			
-			if (!$isValidMessage) {
-				
-			} else if (!$loginSuccess) {
-	
-			} else {
-	
-			}
-	
+			$qiscusConfig = Configuration::Get('Qiscus');
+			$url = $qiscusConfig['Url'];
+			$appcode = $qiscusConfig['AppCode'];
+			$secret = $qiscusConfig['AppSecret'];
+			$sender = $qiscusConfig['Sender'];
+			Qiscus::Setup($url, $appcode, $secret, $sender);
+			Qiscus::SendText($room_id, $replyMessage);
+			Qiscus::Resolve($room_id);
 
+			$result = [
+				"success" => true,
+				"message" => $replyMessage
+			];
+
+			return $result;
 		} catch (\Exception $ex) {
 			$code = $ex->getCode();
 			Log::error($ex->getMessage(), $code);
