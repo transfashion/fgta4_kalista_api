@@ -49,16 +49,16 @@
         },
         {
             "name": "agungdhewe/setingan",
-            "version": "v0.9.2",
+            "version": "v0.9.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/agungdhewe/setingan.git",
-                "reference": "7d69b5affe2ec288b11a00a749d833ec4ed47fdd"
+                "reference": "eeeea42fa006236325a537d6a9e7a916c607a677"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/agungdhewe/setingan/zipball/7d69b5affe2ec288b11a00a749d833ec4ed47fdd",
-                "reference": "7d69b5affe2ec288b11a00a749d833ec4ed47fdd",
+                "url": "https://api.github.com/repos/agungdhewe/setingan/zipball/eeeea42fa006236325a537d6a9e7a916c607a677",
+                "reference": "eeeea42fa006236325a537d6a9e7a916c607a677",
                 "shasum": ""
             },
             "type": "library",
@@ -79,9 +79,9 @@
             ],
             "support": {
                 "issues": "https://github.com/agungdhewe/setingan/issues",
-                "source": "https://github.com/agungdhewe/setingan/tree/v0.9.2"
+                "source": "https://github.com/agungdhewe/setingan/tree/v0.9.4"
             },
-            "time": "2024-11-26T01:59:39+00:00"
+            "time": "2024-11-26T03:07:22+00:00"
         }
     ],
     "packages-dev": [],

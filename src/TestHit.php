@@ -24,7 +24,7 @@ final class TestHit extends Api {
 	 * @ApiMethod
 	*/
 	public final function TestQiscusRobolabs(array $payload) : bool {
-		$rootDir = Configuration::getRootDir();
+		$rootDir = Configuration::GetRootDir();
 		$outputfilepath = join(DIRECTORY_SEPARATOR, [$rootDir, 'output', 'testqiscusrobolabs.txt']);
 		$jsonData = print_r($payload, true);
 	

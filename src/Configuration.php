@@ -7,7 +7,7 @@ use AgungDhewe\Setingan\Config;
 
 
 final class Configuration extends Config {
-	const DB_MAIN = "DbMain";	
+	public const DB_MAIN = "DbMain";	
 
 	const DB_PARAM = [
 		\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,

@@ -1,52 +1,305 @@
-2024-11-25 18:17:19	REQUEST	Transfashion/KalistaApi/Session/RegisterExternalSession
-2024-11-25 18:17:19	INFO	Create New Session 477ed1394d325bf3a0b3f9b2fbbf3479 from external 364adb35817a783f9cee5477674a5d03 with url https://dev.transfashion.id/page/login	Transfashion/KalistaApi/Session/RegisterExternalSession
-2024-11-25 18:17:21	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:17:21	INFO	[477ed1394d325bf3a0b3f9b2fbbf3479] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:17:21	INFO	[477ed1394d325bf3a0b3f9b2fbbf3479] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:17:23	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:17:23	INFO	[477ed1394d325bf3a0b3f9b2fbbf3479] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:17:23	INFO	[477ed1394d325bf3a0b3f9b2fbbf3479] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:17:25	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:17:25	INFO	[477ed1394d325bf3a0b3f9b2fbbf3479] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:17:25	INFO	[477ed1394d325bf3a0b3f9b2fbbf3479] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:17:27	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:17:27	INFO	[477ed1394d325bf3a0b3f9b2fbbf3479] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:17:27	INFO	[477ed1394d325bf3a0b3f9b2fbbf3479] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:17:29	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:17:29	INFO	[477ed1394d325bf3a0b3f9b2fbbf3479] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:17:29	INFO	[477ed1394d325bf3a0b3f9b2fbbf3479] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:17:31	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:17:31	INFO	[477ed1394d325bf3a0b3f9b2fbbf3479] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:17:31	INFO	[477ed1394d325bf3a0b3f9b2fbbf3479] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:17:33	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:17:33	INFO	[477ed1394d325bf3a0b3f9b2fbbf3479] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:17:33	INFO	[477ed1394d325bf3a0b3f9b2fbbf3479] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:17:35	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:17:35	INFO	[477ed1394d325bf3a0b3f9b2fbbf3479] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:17:35	INFO	[477ed1394d325bf3a0b3f9b2fbbf3479] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:17:37	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:17:37	INFO	[477ed1394d325bf3a0b3f9b2fbbf3479] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:17:37	INFO	[477ed1394d325bf3a0b3f9b2fbbf3479] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:17:38	REQUEST	Transfashion/KalistaApi/Whatsapp/CustomerLogin
-2024-11-25 18:17:38	INFO	Databse Connected!	Transfashion/KalistaApi/Whatsapp/CustomerLogin
-2024-11-25 18:17:38	INFO	[6285885525565] receive message: Hai Transfashion,Saya ingin #login-via-whatsapp ke website transfashion.id[ref:477ed1394d325bf3a0b3f9b2fbbf3479]	Transfashion/KalistaApi/Whatsapp/CustomerLogin
-2024-11-25 18:17:38	INFO	[6285885525565] number found is customer database.	Transfashion/KalistaApi/Whatsapp/CustomerLogin
-2024-11-25 18:17:38	INFO	[6285885525565] Login success	Transfashion/KalistaApi/Whatsapp/CustomerLogin
-2024-11-25 18:17:39	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:17:39	INFO	[477ed1394d325bf3a0b3f9b2fbbf3479] user is 66f22fa6504bf Agung N	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:18:11	REQUEST	Transfashion/KalistaApi/Whatsapp/CustomerLogin
-2024-11-25 18:18:11	INFO	Databse Connected!	Transfashion/KalistaApi/Whatsapp/CustomerLogin
-2024-11-25 18:18:11	INFO	[6285885525565] receive message: Hai Transfashion, Saya ingin #login-via-whatsapp ke website transfashion.id [ref:c0265f2122b7e429b55f1cd44d1a17de]	Transfashion/KalistaApi/Whatsapp/CustomerLogin
-2024-11-25 18:18:11	INFO	[6285885525565] number found is customer database.	Transfashion/KalistaApi/Whatsapp/CustomerLogin
-2024-11-25 18:18:11	INFO	[6285885525565] Login success	Transfashion/KalistaApi/Whatsapp/CustomerLogin
-2024-11-25 18:18:35	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:20:00	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:20:00	INFO	[cde19f67e13f86a5172695473aafaa2f] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:20:00	INFO	[cde19f67e13f86a5172695473aafaa2f] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:29:19	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:29:19	INFO	[cde19f67e13f86a5172695473aafaa2f] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-25 18:29:19	INFO	[cde19f67e13f86a5172695473aafaa2f] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
-2024-11-26 02:00:49	REQUEST	Transfashion/KalistaApi/Session/RegisterExternalSession
-2024-11-26 02:00:49	INFO	Create New Session af44ff88f20437b2b8031dca137ba7a0 from external 364adb35817a783f9cee5477674a5d03 with url https://dev.transfashion.id/page/login	Transfashion/KalistaApi/Session/RegisterExternalSession
-2024-11-26 02:02:11	REQUEST	Transfashion/KalistaApi/Session/RegisterExternalSession
-2024-11-26 02:02:11	INFO	Create New Session d56ca59fbd4cfceeb85040a3698c64ab from external 364adb35817a783f9cee5477674a5d03 with url https://dev.transfashion.id/page/login	Transfashion/KalistaApi/Session/RegisterExternalSession
+2024-11-26 02:43:29	REQUEST	Transfashion/KalistaApi/Session/RegisterExternalSession
+2024-11-26 02:43:29	INFO	Create New Session ea8b708120737ffd87db1f540ce9c34e from external e8ee907d38db7df0de5a9525c5401229 with url https://dev.transfashion.id/page/login	Transfashion/KalistaApi/Session/RegisterExternalSession
+2024-11-26 02:44:45	REQUEST	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 02:44:45	INFO	Databse Connected!	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 02:44:45	INFO	[6285885525565] receive message: Hai Transfashion, Saya ingin #login-via-whatsapp ke website transfashion.id [ref:c0265f2122b7e429b55f1cd44d1a17de]	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 02:45:49	REQUEST	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 02:45:49	INFO	Databse Connected!	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 02:45:49	INFO	[6285885525565] receive message: Hai Transfashion, Saya ingin #login-via-whatsapp ke website transfashion.id [ref:c0265f2122b7e429b55f1cd44d1a17de]	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 02:45:52	INFO	[6285885525565] number found is customer database.	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 02:45:52	INFO	[6285885525565] Login success	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 02:46:07	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 02:46:07	INFO	[c0265f2122b7e429b55f1cd44d1a17de] session is expired	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 02:46:07	INFO	[c0265f2122b7e429b55f1cd44d1a17de] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 02:46:46	REQUEST	Transfashion/KalistaApi/Session/RegisterExternalSession
+2024-11-26 02:46:46	INFO	Create New Session aafe1934263416dc48aea58e01106970 from external e8ee907d38db7df0de5a9525c5401229 with url https://dev.transfashion.id/page/login	Transfashion/KalistaApi/Session/RegisterExternalSession
+2024-11-26 02:47:14	REQUEST	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 02:47:14	INFO	Databse Connected!	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 02:47:14	INFO	[6285885525565] receive message: Hai Transfashion,Saya ingin #login-via-whatsapp ke website transfashion.id[ref:aafe1934263416dc48aea58e01106970]	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 02:47:17	INFO	[6285885525565] number found is customer database.	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 02:47:17	INFO	[6285885525565] Login success	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 02:47:22	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 02:47:22	INFO	[aafe1934263416dc48aea58e01106970] user is 66f22fa6504bf Agung N	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 02:48:09	REQUEST	Transfashion/KalistaApi/Session/RegisterExternalSession
+2024-11-26 02:48:09	INFO	Create New Session e4818a620aa2d6e9079d41c42e4aa5d6 from external e8ee907d38db7df0de5a9525c5401229 with url https://dev.transfashion.id/page/login	Transfashion/KalistaApi/Session/RegisterExternalSession
+2024-11-26 02:48:25	REQUEST	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 02:48:25	INFO	Databse Connected!	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 02:48:25	INFO	[6285885525565] receive message: Hai Transfashion,Saya ingin #login-via-whatsapp ke website transfashion.id[ref:e4818a620aa2d6e9079d41c42e4aa5d6]	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 02:48:25	INFO	[6285885525565] number found is customer database.	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 02:48:25	INFO	[6285885525565] Login success	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 02:48:28	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 02:48:28	INFO	[e4818a620aa2d6e9079d41c42e4aa5d6] user is 66f22fa6504bf Agung N	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 02:48:55	REQUEST	Transfashion/KalistaApi/Session/SessionLogout
+2024-11-26 02:48:55	INFO	session destroyed: e4818a620aa2d6e9079d41c42e4aa5d6	Transfashion/KalistaApi/Session/SessionLogout
+2024-11-26 02:49:00	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 02:49:00	INFO	[e4818a620aa2d6e9079d41c42e4aa5d6] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 02:49:00	INFO	[e4818a620aa2d6e9079d41c42e4aa5d6] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 02:49:04	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 02:49:04	INFO	[aafe1934263416dc48aea58e01106970] user is 66f22fa6504bf Agung N	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 02:49:07	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 02:49:07	INFO	[aafe1934263416dc48aea58e01106970] user is 66f22fa6504bf Agung N	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 02:49:36	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 02:49:36	INFO	[c0265f2122b7e429b55f1cd44d1a17de] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 02:49:36	INFO	[c0265f2122b7e429b55f1cd44d1a17de] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 02:52:55	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 02:52:55	INFO	[aafe1934263416dc48aea58e01106970] session is expired	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 02:52:55	INFO	[aafe1934263416dc48aea58e01106970] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:03:57	REQUEST	Transfashion/KalistaApi/Session/RegisterExternalSession
+2024-11-26 03:03:57	INFO	Create New Session ac430c19dcf831914577bd961ee36dec from external 673c368647e98 with url https://dev.transfashion.id/page/login	Transfashion/KalistaApi/Session/RegisterExternalSession
+2024-11-26 03:03:59	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:03:59	INFO	[ac430c19dcf831914577bd961ee36dec] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:03:59	INFO	[ac430c19dcf831914577bd961ee36dec] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:01	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:01	INFO	[ac430c19dcf831914577bd961ee36dec] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:01	INFO	[ac430c19dcf831914577bd961ee36dec] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:03	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:03	INFO	[ac430c19dcf831914577bd961ee36dec] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:03	INFO	[ac430c19dcf831914577bd961ee36dec] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:05	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:05	INFO	[ac430c19dcf831914577bd961ee36dec] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:05	INFO	[ac430c19dcf831914577bd961ee36dec] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:07	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:07	INFO	[ac430c19dcf831914577bd961ee36dec] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:07	INFO	[ac430c19dcf831914577bd961ee36dec] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:09	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:09	INFO	[ac430c19dcf831914577bd961ee36dec] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:09	INFO	[ac430c19dcf831914577bd961ee36dec] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:11	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:11	INFO	[ac430c19dcf831914577bd961ee36dec] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:11	INFO	[ac430c19dcf831914577bd961ee36dec] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:13	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:13	INFO	[ac430c19dcf831914577bd961ee36dec] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:13	INFO	[ac430c19dcf831914577bd961ee36dec] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:15	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:15	INFO	[ac430c19dcf831914577bd961ee36dec] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:15	INFO	[ac430c19dcf831914577bd961ee36dec] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:17	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:17	INFO	[ac430c19dcf831914577bd961ee36dec] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:17	INFO	[ac430c19dcf831914577bd961ee36dec] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:19	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:19	INFO	[ac430c19dcf831914577bd961ee36dec] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:19	INFO	[ac430c19dcf831914577bd961ee36dec] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:21	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:21	INFO	[ac430c19dcf831914577bd961ee36dec] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:21	INFO	[ac430c19dcf831914577bd961ee36dec] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:23	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:23	INFO	[ac430c19dcf831914577bd961ee36dec] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:23	INFO	[ac430c19dcf831914577bd961ee36dec] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:25	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:25	INFO	[ac430c19dcf831914577bd961ee36dec] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:25	INFO	[ac430c19dcf831914577bd961ee36dec] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:27	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:27	INFO	[ac430c19dcf831914577bd961ee36dec] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:27	INFO	[ac430c19dcf831914577bd961ee36dec] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:29	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:29	INFO	[ac430c19dcf831914577bd961ee36dec] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:29	INFO	[ac430c19dcf831914577bd961ee36dec] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:31	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:31	INFO	[ac430c19dcf831914577bd961ee36dec] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:31	INFO	[ac430c19dcf831914577bd961ee36dec] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:33	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:33	INFO	[ac430c19dcf831914577bd961ee36dec] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:33	INFO	[ac430c19dcf831914577bd961ee36dec] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:35	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:35	INFO	[ac430c19dcf831914577bd961ee36dec] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:35	INFO	[ac430c19dcf831914577bd961ee36dec] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:37	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:37	INFO	[ac430c19dcf831914577bd961ee36dec] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:37	INFO	[ac430c19dcf831914577bd961ee36dec] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:39	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:39	INFO	[ac430c19dcf831914577bd961ee36dec] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:39	INFO	[ac430c19dcf831914577bd961ee36dec] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:41	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:41	INFO	[ac430c19dcf831914577bd961ee36dec] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:41	INFO	[ac430c19dcf831914577bd961ee36dec] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:43	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:43	INFO	[ac430c19dcf831914577bd961ee36dec] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:43	INFO	[ac430c19dcf831914577bd961ee36dec] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:45	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:45	INFO	[ac430c19dcf831914577bd961ee36dec] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:45	INFO	[ac430c19dcf831914577bd961ee36dec] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:47	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:47	INFO	[ac430c19dcf831914577bd961ee36dec] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:47	INFO	[ac430c19dcf831914577bd961ee36dec] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:49	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:49	INFO	[ac430c19dcf831914577bd961ee36dec] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:49	INFO	[ac430c19dcf831914577bd961ee36dec] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:51	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:51	INFO	[ac430c19dcf831914577bd961ee36dec] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:51	INFO	[ac430c19dcf831914577bd961ee36dec] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:54	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:54	INFO	[ac430c19dcf831914577bd961ee36dec] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:54	INFO	[ac430c19dcf831914577bd961ee36dec] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:55	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:55	INFO	[ac430c19dcf831914577bd961ee36dec] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:55	INFO	[ac430c19dcf831914577bd961ee36dec] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:57	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:57	INFO	[ac430c19dcf831914577bd961ee36dec] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:04:57	INFO	[ac430c19dcf831914577bd961ee36dec] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:05:08	REQUEST	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 03:05:08	INFO	Databse Connected!	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 03:05:08	INFO	[6283895896935] receive message: Hai Transfashion,Saya ingin #login-via-whatsapp ke website transfashion.id[ref:ac430c19dcf831914577bd961ee36dec]	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 03:05:08	INFO	[6283895896935] number found is customer database.	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 03:05:08	INFO	[6283895896935] Login success	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 03:05:16	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:05:16	INFO	[ac430c19dcf831914577bd961ee36dec] user is 66f3deae1fd23 Try Putra Budhy Sulistyo	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 03:05:51	REQUEST	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 03:05:51	INFO	Databse Connected!	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 03:05:51	INFO	[6283895896935] receive message: Hai Transfashion,Saya ingin #login-via-whatsapp ke website transfashion.id[ref:ac430c19dcf831914577bd961ee36dec]	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 03:05:51	INFO	[6283895896935] number found is customer database.	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 03:05:51	INFO	[6283895896935] Login success	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 03:13:38	REQUEST	Transfashion/KalistaApi/Session/SessionLogout
+2024-11-26 03:13:38	INFO	session destroyed: ac430c19dcf831914577bd961ee36dec	Transfashion/KalistaApi/Session/SessionLogout
+2024-11-26 03:20:00	REQUEST	Transfashion/KalistaApi/Session/SessionLogout
+2024-11-26 03:20:00	INFO	session destroyed: aafe1934263416dc48aea58e01106970	Transfashion/KalistaApi/Session/SessionLogout
+2024-11-26 03:20:01	REQUEST	Transfashion/KalistaApi/Session/SessionLogout
+2024-11-26 03:20:03	REQUEST	Transfashion/KalistaApi/Session/SessionLogout
+2024-11-26 03:20:04	REQUEST	Transfashion/KalistaApi/Session/SessionLogout
+2024-11-26 03:20:07	REQUEST	Transfashion/KalistaApi/Session/SessionLogout
+2024-11-26 03:20:19	REQUEST	Transfashion/KalistaApi/Session/SessionLogout
+2024-11-26 03:20:57	REQUEST	Transfashion/KalistaApi/Session/SessionLogout
+2024-11-26 03:22:52	REQUEST	Transfashion/KalistaApi/Session/SessionLogout
+2024-11-26 03:32:48	REQUEST	Transfashion/KalistaApi/Session/SessionLogout
+2024-11-26 03:32:48	ACCESS	tupe parameter sessid tidak sesuai antara yand dikirim dengan yang didefinisikan di api	Transfashion/KalistaApi/Session/SessionLogout
+2024-11-26 03:34:24	REQUEST	Transfashion/KalistaApi/Session/SessionLogout
+2024-11-26 03:34:24	ACCESS	tupe parameter sessid tidak sesuai antara yand dikirim dengan yang didefinisikan di api	Transfashion/KalistaApi/Session/SessionLogout
+2024-11-26 03:36:10	REQUEST	Transfashion/KalistaApi/Session/SessionLogout
+2024-11-26 03:36:10	ACCESS	tupe parameter sessid tidak sesuai antara yand dikirim dengan yang didefinisikan di api	Transfashion/KalistaApi/Session/SessionLogout
+2024-11-26 03:37:31	REQUEST	Transfashion/KalistaApi/Session/SessionLogout
+2024-11-26 03:37:31	ACCESS	parameter sessid tidak boleh null	Transfashion/KalistaApi/Session/SessionLogout
+2024-11-26 04:00:20	REQUEST	Transfashion/KalistaApi/Session/SessionLogout
+2024-11-26 04:00:20	ACCESS	parameter sessid tidak boleh null	Transfashion/KalistaApi/Session/SessionLogout
+2024-11-26 04:00:47	REQUEST	Transfashion/KalistaApi/Session/SessionLogout
+2024-11-26 04:00:47	ACCESS	parameter sessid tidak boleh null	Transfashion/KalistaApi/Session/SessionLogout
+2024-11-26 04:14:05	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 04:14:05	INFO	[e4818a620aa2d6e9079d41c42e4aa5d6] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 04:14:05	INFO	[e4818a620aa2d6e9079d41c42e4aa5d6] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 04:30:24	REQUEST	_preparation.inc.php
+2024-11-26 04:31:19	REQUEST	create-new-custbyaccess.php
+2024-11-26 04:33:10	REQUEST	create-new-custbyaccess.php
+2024-11-26 04:35:35	REQUEST	create-new-custbyaccess.php
+2024-11-26 04:36:20	REQUEST	create-new-custbyaccess.php
+2024-11-26 06:54:16	REQUEST	create-new-custbyaccess.php
+2024-11-26 06:55:35	REQUEST	create-new-custbyaccess.php
+2024-11-26 07:02:31	REQUEST	create-new-custbyaccess.php
+2024-11-26 07:02:31	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 07:02:48	REQUEST	create-new-custbyaccess.php
+2024-11-26 07:02:48	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 07:02:55	REQUEST	create-new-custbyaccess.php
+2024-11-26 07:02:55	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 07:05:47	REQUEST	create-new-custbyaccess.php
+2024-11-26 07:05:47	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 07:05:48	REQUEST	create-new-custbyaccess.php
+2024-11-26 07:05:48	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 07:06:35	REQUEST	create-new-custbyaccess.php
+2024-11-26 07:06:35	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 07:08:32	REQUEST	create-new-custbyaccess.php
+2024-11-26 07:08:32	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 07:09:01	REQUEST	create-new-custbyaccess.php
+2024-11-26 07:09:01	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 07:09:11	REQUEST	create-new-custbyaccess.php
+2024-11-26 07:09:11	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 07:10:02	REQUEST	create-new-custbyaccess.php
+2024-11-26 07:10:02	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 07:10:10	REQUEST	create-new-custbyaccess.php
+2024-11-26 07:10:10	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 07:10:49	REQUEST	create-new-custbyaccess.php
+2024-11-26 07:10:49	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 07:11:14	REQUEST	create-new-custbyaccess.php
+2024-11-26 07:11:14	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 07:11:54	REQUEST	create-new-custbyaccess.php
+2024-11-26 07:11:54	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 07:12:05	REQUEST	create-new-custbyaccess.php
+2024-11-26 07:12:05	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 07:16:47	REQUEST	create-new-custbyaccess.php
+2024-11-26 07:16:47	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 07:16:48	REQUEST	create-new-custbyaccess.php
+2024-11-26 07:16:48	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 07:16:49	REQUEST	create-new-custbyaccess.php
+2024-11-26 07:16:49	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 07:16:49	REQUEST	create-new-custbyaccess.php
+2024-11-26 07:16:49	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 07:16:50	REQUEST	create-new-custbyaccess.php
+2024-11-26 07:16:50	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 07:16:59	REQUEST	create-new-custbyaccess.php
+2024-11-26 07:16:59	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 07:20:57	REQUEST	create-new-custbyaccess.php
+2024-11-26 07:20:57	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 07:21:48	REQUEST	create-new-custbyaccess.php
+2024-11-26 07:21:48	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 07:21:59	REQUEST	create-new-custbyaccess.php
+2024-11-26 07:21:59	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 07:26:05	REQUEST	create-new-custbyaccess.php
+2024-11-26 07:26:05	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 07:26:19	REQUEST	create-new-custbyaccess.php
+2024-11-26 07:26:19	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 07:26:54	REQUEST	create-new-custbyaccess.php
+2024-11-26 07:26:54	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 07:27:16	REQUEST	create-new-custbyaccess.php
+2024-11-26 07:27:16	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 07:29:03	REQUEST	create-new-custbyaccess.php
+2024-11-26 07:29:03	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 07:29:39	REQUEST	create-new-custbyaccess.php
+2024-11-26 07:29:39	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 08:00:34	REQUEST	create-new-custbyaccess.php
+2024-11-26 08:00:34	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 08:01:06	REQUEST	create-new-custbyaccess.php
+2024-11-26 08:01:06	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 08:02:39	REQUEST	create-new-custbyaccess.php
+2024-11-26 08:02:39	INFO	Databse Connected!	create-new-custbyaccess.php
+2024-11-26 08:12:09	REQUEST	Transfashion/KalistaApi/Session/RegisterExternalSession
+2024-11-26 08:12:09	INFO	Create New Session d69a6e4f9410b6ed77d3cc456ab13427 from external e8ee907d38db7df0de5a9525c5401229 with url https://dev.transfashion.id/page/login	Transfashion/KalistaApi/Session/RegisterExternalSession
+2024-11-26 08:12:11	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:12:11	INFO	[d69a6e4f9410b6ed77d3cc456ab13427] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:12:11	INFO	[d69a6e4f9410b6ed77d3cc456ab13427] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:12:13	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:12:13	INFO	[d69a6e4f9410b6ed77d3cc456ab13427] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:12:13	INFO	[d69a6e4f9410b6ed77d3cc456ab13427] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:12:15	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:12:15	INFO	[d69a6e4f9410b6ed77d3cc456ab13427] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:12:15	INFO	[d69a6e4f9410b6ed77d3cc456ab13427] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:12:17	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:12:17	INFO	[d69a6e4f9410b6ed77d3cc456ab13427] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:12:17	INFO	[d69a6e4f9410b6ed77d3cc456ab13427] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:12:19	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:12:19	INFO	[d69a6e4f9410b6ed77d3cc456ab13427] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:12:19	INFO	[d69a6e4f9410b6ed77d3cc456ab13427] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:12:20	REQUEST	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 08:12:20	INFO	Databse Connected!	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 08:12:20	INFO	[6285885525565] receive message: Hai Transfashion,Saya ingin #login-via-whatsapp ke website transfashion.id[ref:d69a6e4f9410b6ed77d3cc456ab13427]	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 08:12:20	INFO	[6285885525565] number found is customer database.	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 08:12:20	INFO	[6285885525565] Login success	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 08:12:21	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:12:21	INFO	[d69a6e4f9410b6ed77d3cc456ab13427] user is 66f22fa6504bf Agung N	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:12:31	REQUEST	Transfashion/KalistaApi/Session/SessionLogout
+2024-11-26 08:12:31	INFO	session destroyed: d69a6e4f9410b6ed77d3cc456ab13427	Transfashion/KalistaApi/Session/SessionLogout
+2024-11-26 08:12:49	REQUEST	Transfashion/KalistaApi/Session/RegisterExternalSession
+2024-11-26 08:12:49	INFO	Create New Session d64b5b44591eaa921af57a766215f83b from external e8ee907d38db7df0de5a9525c5401229 with url https://dev.transfashion.id/page/login	Transfashion/KalistaApi/Session/RegisterExternalSession
+2024-11-26 08:12:51	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:12:51	INFO	[d64b5b44591eaa921af57a766215f83b] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:12:51	INFO	[d64b5b44591eaa921af57a766215f83b] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:12:53	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:12:53	INFO	[d64b5b44591eaa921af57a766215f83b] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:12:53	INFO	[d64b5b44591eaa921af57a766215f83b] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:12:55	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:12:55	INFO	[d64b5b44591eaa921af57a766215f83b] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:12:55	INFO	[d64b5b44591eaa921af57a766215f83b] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:12:57	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:12:57	INFO	[d64b5b44591eaa921af57a766215f83b] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:12:57	INFO	[d64b5b44591eaa921af57a766215f83b] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:12:59	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:12:59	INFO	[d64b5b44591eaa921af57a766215f83b] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:12:59	INFO	[d64b5b44591eaa921af57a766215f83b] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:13:01	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:13:01	INFO	[d64b5b44591eaa921af57a766215f83b] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:13:01	INFO	[d64b5b44591eaa921af57a766215f83b] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:13:03	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:13:03	INFO	[d64b5b44591eaa921af57a766215f83b] cust_id is not in session data, login is expired or not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:13:03	INFO	[d64b5b44591eaa921af57a766215f83b] Login session is expired, or user is not logged in yet	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:13:03	REQUEST	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 08:13:03	INFO	Databse Connected!	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 08:13:03	INFO	[628111401979] receive message: Hai Transfashion,Saya ingin #login-via-whatsapp ke website transfashion.id[ref:d64b5b44591eaa921af57a766215f83b]	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 08:13:03	INFO	[628111401979] is new customer, create new customer	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 08:13:03	INFO	[628111401979] Login success	Transfashion/KalistaApi/Whatsapp/CustomerLogin
+2024-11-26 08:13:05	REQUEST	Transfashion/KalistaApi/Session/GetCustomerLogin
+2024-11-26 08:13:05	INFO	[d64b5b44591eaa921af57a766215f83b] user is 6745830fbedbe Agung N	Transfashion/KalistaApi/Session/GetCustomerLogin

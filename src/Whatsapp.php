@@ -92,17 +92,23 @@ final class Whatsapp extends Api {
 						Log::info("[$phone_number] number found is customer database.");
 					}
 
-					$external_callback_url = $_SESSION['external_callback_url'];
-					$_SESSION['cust_id'] = $cust->Id;
-					$_SESSION['cust_name'] = $cust->Name;
-					$_SESSION['cust_phone'] = $cust->Phone;
-					$_SESSION['cust_email'] = $cust->Email;
-					$_SESSION['gender_id'] = $cust->Gender;
-					$_SESSION['cust_birthdate'] = $cust->BirthDate;
-					$_SESSION['custaccess_code'] = $cust->CustAccessId;
-					$_SESSION['custaccesstype_id'] = $cust->CustAccessType;
-					$replyMessage = "Login success, please back to previous page, or you can click $external_callback_url?id=$kalista_sessid (valid for 3 minutes)";
-					Log::info("[$phone_number] Login success");
+					if ($cust!=null) {
+						$external_callback_url = $_SESSION['external_callback_url'];
+						$_SESSION['cust_id'] = $cust->Id;
+						$_SESSION['cust_name'] = $cust->Name;
+						$_SESSION['cust_phone'] = $cust->Phone;
+						$_SESSION['cust_email'] = $cust->Email;
+						$_SESSION['gender_id'] = $cust->Gender;
+						$_SESSION['cust_birthdate'] = $cust->BirthDate;
+						$_SESSION['custaccess_code'] = $cust->CustAccessId;
+						$_SESSION['custaccesstype_id'] = $cust->CustAccessType;
+						$replyMessage = "Login success, please back to previous page, or you can click $external_callback_url?id=$kalista_sessid (link valid for 3 minutes)";
+						Log::info("[$phone_number] Login success");
+					} else {
+						$errmsg = "error while get/insert new data customer, returned error empty data";
+						Log::error("[$phone_number] $errmsg");
+						$replyMessage = $errmsg;
+					}
 				} else {
 					$replyMessage = "login via whatssapp fail, please try again later";
 					Log::warning("[$phone_number] Login fail, cek session kalista: $kalista_sessid");

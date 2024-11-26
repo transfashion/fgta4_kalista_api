@@ -38,7 +38,7 @@ try {
 		throw new \Exception("$configpath not found", 500);
 	}
 
-	Configuration::setRootDir(__DIR__);
+	Configuration::SetRootDir(__DIR__);
 	require_once $configpath;
 
 	$logoutput = Configuration::Get('Log.Output') ?? join(DIRECTORY_SEPARATOR, [__DIR__, 'output', 'log.txt']); // default output/log.txt
@@ -128,10 +128,18 @@ try {
 	$executeParameters = [];
 	foreach ($funcparams as $param) {
 		$paramname = $param->getName();
+		$type = $param->getType();
+		$isOptional = $param->isOptional();
 		if (!array_key_exists($paramname, $receiveParameters)) { // cek apakah $paramname dikirim dari POST $receiveParameters
 			$errmsg = Log::access("parameter $paramname tidak ditemukan di data yang dikirimkan");
 			$serializedparam = print_r($receiveParameters, true);
 			Log::debug($serializedparam);
+			throw new \Exception($errmsg, 400);
+		} else if (!$isOptional && $receiveParameters[$paramname]==null) { // cek apakah datanya null
+			$errmsg = Log::access("parameter $paramname tidak boleh null");
+			throw new \Exception($errmsg, 400);
+		} else if (getType($receiveParameters[$paramname])!=$type) { // cek apakah tipe data sesuai,
+			$errmsg = Log::access("type parameter $paramname tidak sesuai antara yang dikirim dengan yang didefinisikan di api");
 			throw new \Exception($errmsg, 400);
 		}
 		$executeParameters[] = $receiveParameters[$paramname];
