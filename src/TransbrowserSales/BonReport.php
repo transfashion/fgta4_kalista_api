@@ -1,17 +1,24 @@
 <?php declare(strict_types=1);
-namespace Transfashion\KalistaApi\TransBrowserSales;
+namespace Transfashion\KalistaApi\TransbrowserSales;
 
 use AgungDhewe\PhpSqlUtil\SqlSelect;
 use AgungDhewe\PhpSqlUtil\SqlInsert;
 
+use Transfashion\KalistaApi\Log;
+
 final class BonReport  {
+	public const TBL_REPORT = "rpt_sales";
+	private static SqlInsert $cmd_insert;
 
 	public static final function Save(\PDO $db, string $bon_id, array $reportrows) : bool {
 		try {
 			foreach ($reportrows as $row) {
 				$obj = self::createObjectReport($row);
-				
-
+				if (!isset(self::$cmd_insert)) {
+					self::$cmd_insert = new SqlInsert(self::TBL_REPORT, $obj);
+					self::$cmd_insert->bind($db);
+				}
+				self::$cmd_insert->execute($obj);
 			}
 			return true;
 		} catch (\Exception $ex) {

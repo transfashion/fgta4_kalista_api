@@ -1,5 +1,5 @@
 <?php declare(strict_types=1);
-namespace Transfashion\KalistaApi\TransBrowserSales;
+namespace Transfashion\KalistaApi\TransbrowserSales;
 
 use AgungDhewe\PhpSqlUtil\SqlSelect;
 use AgungDhewe\PhpSqlUtil\SqlInsert;

@@ -90,4 +90,10 @@ final class Log {
 	}
 
 
+	public final static function dump(mixed $entry) : string {
+		$var = print_r($entry, true);
+		$ret = self::writeTextToOutputFile("DUMP", $var);
+		return $ret;
+	}
+
 }
