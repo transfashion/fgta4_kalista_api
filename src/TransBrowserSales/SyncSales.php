@@ -1,10 +1,17 @@
 <?php declare(strict_types=1);
-namespace Transfashion\KalistaApi;
+namespace Transfashion\KalistaApi\TransBrowserSales;
 
 use AgungDhewe\PhpSqlUtil\SqlSelect;
 use AgungDhewe\PhpSqlUtil\SqlInsert;
 
-final class TransbrowserSales extends Api {
+use Transfashion\KalistaApi\Api;
+use Transfashion\KalistaApi\Configuration;
+use Transfashion\KalistaApi\Database;
+use Transfashion\KalistaApi\Log;
+
+
+
+final class SyncSales extends Api {
 
 
 	private \PDOStatement $stmt_del_report;
@@ -54,7 +61,10 @@ final class TransbrowserSales extends Api {
 			$db->beginTransaction();
 			try {
 				$this->delete($bon_id);
-				$this->saveReport($bon_id, $report);
+				BonReport::Save($db, $bon_id, $report);
+				Bon::Save($db, $bon_id, $header);
+				BonItem::Save($db, $bon_id, $items);
+				BonPayment::Save($db, $bon_id, $payments);
 
 				$db->commit();
 				$success = true;
@@ -70,21 +80,6 @@ final class TransbrowserSales extends Api {
 				"success" => $success,
 				"message" => $message
 			];
-		}
-	}
-
-
-	private function saveReport(string $bon_id, array $reportrows) : bool {
-		$db = Database::GetConnection(Configuration::DB_RPT);
-		try {
-			foreach ($reportrows as $row) {
-				
-				
-
-			}
-			return true;
-		} catch (\Exception $ex) {
-			throw $ex;
 		}
 	}
 
