@@ -56,6 +56,66 @@ final class Session extends Api {
 	/**
 	 * @ApiMethod
 	 */
+	public function RenewSession(string $sessid, string $external_sessid, string $expired) : array {
+		try {
+			$lifetime = $expired - time();
+			ini_set('session.gc_maxlifetime',  $lifetime); 
+			session_id($sessid);
+			session_start();
+			session_regenerate_id(true);
+			$kalista_sessid = session_id();
+
+	
+			
+			$result = [
+				'success' => true,
+				'errormessage' => '',
+				'kalista_sessid' => $kalista_sessid
+			];
+		} catch (\Exception $ex) {
+			$result = [
+				'success' => false,
+				'errormessage' => $ex->getMessage(),
+				'kalista_sessid' => null
+			];
+			return $result;
+		}
+	}
+
+
+	// /**
+	//  * @ApiMethod
+	//  */
+	// public function RegisterLoginSession(string $old_kalista_sessid, string $external_sessid) : array {
+	// 	try {
+
+			
+	// 		// create new kalista sessionid 
+	// 		$new_kalista_sessid = '';
+
+	// 		$result = [
+	// 			'success' => true,
+	// 			'errormessage' => '',
+	// 			'kalista_sessid' => $new_kalista_sessid
+	// 		];
+	// 	} catch (\Exception $ex) {
+	// 		$errmsg = $ex->getMessage();
+	// 		Log::info($errmsg);
+	// 		$result = [
+	// 			'success' => false,
+	// 			'errormessage' => $errmsg,
+	// 			'kalista_sessid' => null
+	// 		];
+
+	// 	} finally {
+	// 		return $result;
+	// 	}
+	// }
+
+
+	/**
+	 * @ApiMethod
+	 */
 	public function SessionLogout(string $sessid) : array {
 		$kalista_sessid = $sessid;
 		session_id($kalista_sessid);
@@ -67,6 +127,8 @@ final class Session extends Api {
 			'success' => true
 		];
 	}
+
+
 
 	/**
 	 * @ApiMethod

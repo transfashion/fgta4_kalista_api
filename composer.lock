@@ -4,8 +4,44 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "def41c05f72394c29eea864b6b5956a5",
+    "content-hash": "7f4532e80bb2093fa031b1037c0cce29",
     "packages": [
+        {
+            "name": "agungdhewe/cli",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/agungdhewe/cli.git",
+                "reference": "6e9848edd9b2614056ce17a34eaf7c810a99eac5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/agungdhewe/cli/zipball/6e9848edd9b2614056ce17a34eaf7c810a99eac5",
+                "reference": "6e9848edd9b2614056ce17a34eaf7c810a99eac5",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "AgungDhewe\\Cli\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Agung Nugroho",
+                    "email": "agung_dhewe@yahoo.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/agungdhewe/cli/issues",
+                "source": "https://github.com/agungdhewe/cli/tree/v1.0"
+            },
+            "time": "2024-11-08T08:39:38+00:00"
+        },
         {
             "name": "agungdhewe/phpsqlutil",
             "version": "dev-main",

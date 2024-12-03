@@ -14,6 +14,7 @@
     ],
     "require": {
         "agungdhewe/phpsqlutil": "@dev",
-        "agungdhewe/setingan": "^0.9.1"
+        "agungdhewe/setingan": "^0.9.1",
+        "agungdhewe/cli": "^1.0"
     }
 }

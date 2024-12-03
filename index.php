@@ -109,7 +109,7 @@ try {
 
 	// get executed method information
 	if (!method_exists($classname, $functionname)) {
-		$errmsg = Log::access("Method '$functionname' is not found in '$classname'");
+		$errmsg = Log::access("$classname::$functionname is not found");
 		throw new \Exception($errmsg, 400);
 	};
 

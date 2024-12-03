@@ -30,6 +30,10 @@ final class Log {
 	private static function writeTextToOutputFile(string $type, string $text, ?string $reference=null) : string {
 		$text = str_replace("\n", "", $text);
 
+		if (!isset(self::$_request)) {
+			self::$_request = '';
+		}
+
 		if ($reference) {
 			$entry = join("\t", [date("Y-m-d H:i:s"), $type, $text, self::$_request, $reference]);
 		} else {

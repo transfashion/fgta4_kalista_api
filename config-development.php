@@ -10,6 +10,13 @@ Configuration::Setup([
 		'pass' => "rahasia123!"
 	],
 
+
+	'DbRpt' => [
+		'DSN' => "mysql:host=172.18.20.249;dbname=tfirptdblocal",
+		'user' => "root",
+		'pass' => "rahasia123!"
+	],
+
 	'Qiscus' => [
 		'Url' => 'https://omnichannel.qiscus.com',
 		'AppCode' => 'zear-ekayinjcwao90mmn',
@@ -22,5 +29,6 @@ Configuration::Setup([
 
 Configuration::UseConfig([
 	Configuration::DB_MAIN => 'DbMain',
+	Configuration::DB_RPT => 'DbRpt',
 ]);
 
