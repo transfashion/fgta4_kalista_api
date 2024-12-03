@@ -5,3 +5,8 @@ allowed-apps.php
 
 
 /vendor/
+
+
+output
+outputtemp
+
