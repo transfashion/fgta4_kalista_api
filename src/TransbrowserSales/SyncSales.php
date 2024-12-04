@@ -65,6 +65,7 @@ final class SyncSales extends Api {
 				Bon::Save($db, $bon_id, $header);
 				BonItem::Save($db, $bon_id, $items);
 				BonPayment::Save($db, $bon_id, $payments);
+				BonQueue::Save($db, $bon_id);
 
 				$db->commit();
 				$success = true;
