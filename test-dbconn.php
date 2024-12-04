@@ -13,14 +13,14 @@ use Transfashion\KalistaApi\Database;
 
 try {
 	$configfile = 'config-production.php';
-	if (getenv('DEBUG')==='true') {
-		$configfile = 'config-development.php';
+	if (getenv('API_CONFIG_FILE')!="" ) {
+		$configfile = getenv('API_CONFIG_FILE');
 	}
 
 	echo "Config used: " . $configfile . "\n";
 	$configpath = join(DIRECTORY_SEPARATOR, [__DIR__, $configfile]);
 	if (!is_file($configpath)) {
-		throw new \Exception("$configpath not found", 500);
+		throw new \Exception("config file: '$configpath' not found", 500);
 	}
 
 	Configuration::SetRootDir(__DIR__);

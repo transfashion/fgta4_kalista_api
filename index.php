@@ -28,8 +28,8 @@ ob_start();
 try {
 
 	$configfile = 'config-production.php';
-	if (getenv('DEBUG')==='true') {
-		$configfile = 'config-development.php';
+	if (getenv('API_CONFIG_FILE')!="" ) {
+		$configfile = getenv('API_CONFIG_FILE');
 	}
 
 	$sp = DIRECTORY_SEPARATOR;
