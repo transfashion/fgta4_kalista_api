@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "agungdhewe/cli",
-            "version": "v1.0",
+            "version": "v1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/agungdhewe/cli.git",
-                "reference": "6e9848edd9b2614056ce17a34eaf7c810a99eac5"
+                "reference": "088b21110b2d66d475badba10b204f6493d3bbed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/agungdhewe/cli/zipball/6e9848edd9b2614056ce17a34eaf7c810a99eac5",
-                "reference": "6e9848edd9b2614056ce17a34eaf7c810a99eac5",
+                "url": "https://api.github.com/repos/agungdhewe/cli/zipball/088b21110b2d66d475badba10b204f6493d3bbed",
+                "reference": "088b21110b2d66d475badba10b204f6493d3bbed",
                 "shasum": ""
             },
             "type": "library",
@@ -38,9 +38,9 @@
             ],
             "support": {
                 "issues": "https://github.com/agungdhewe/cli/issues",
-                "source": "https://github.com/agungdhewe/cli/tree/v1.0"
+                "source": "https://github.com/agungdhewe/cli/tree/v1.1"
             },
-            "time": "2024-11-08T08:39:38+00:00"
+            "time": "2024-12-04T05:54:41+00:00"
         },
         {
             "name": "agungdhewe/phpsqlutil",
