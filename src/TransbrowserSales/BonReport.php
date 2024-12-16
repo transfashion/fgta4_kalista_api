@@ -114,6 +114,8 @@ final class BonReport  {
 		$obj->sales_itemgross = $row['sales_itemgross'];
 		$obj->sales_itemnett = $row['sales_itemnett'];
 		$obj->sales_nett = $row['sales_nett'];
+		$obj->sales_nettfp = $row['sales_nettfp'];
+		$obj->sales_nettmd = $row['sales_nettmd'];
 		$obj->sales_tax = $row['sales_tax'];
 		$obj->sales_taxpercent = $row['sales_taxpercent'];
 		$obj->currency_id = $row['currency_id'];
