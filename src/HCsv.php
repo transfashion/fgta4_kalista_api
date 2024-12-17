@@ -5,6 +5,8 @@ if (!defined('CSV_SEPARATOR')) {
 	define('CSV_SEPARATOR', '|');
 }
 
+use AgungDhewe\PhpSqlUtil\SqlInsert;
+use AgungDhewe\PhpSqlUtil\SqlUpdate;
 
 final class HCsv {
 	private mixed $fp;
@@ -77,6 +79,60 @@ final class HCsv {
 			} else {
 				return false;
 			}
+		} catch (\Exception $ex) {
+			throw $ex;
+		}
+	}
+
+
+	public function syncToTable(\PDO $db, string $tablename, string $primarykey, callable $fnCreateRowObject) : void {
+		try {
+
+			while ($row=$this->readline()) {
+				$obj = $fnCreateRowObject($row);
+
+				if (!isset($stmt_cek)) {
+					$query = "select $primarykey, md5checksum from $tablename where $primarykey=:$primarykey";
+					$stmt = $db->prepare($query);
+					$stmt_cek = $stmt;
+				}
+
+				$pkvalue = $obj->{$primarykey};
+
+				$stmt = $stmt_cek;
+				$stmt->execute([":$primarykey"=>$pkvalue]);
+				$rowcek = $stmt->fetch();
+				if ($rowcek==null) {
+					// insert
+					if (!isset($cmd_insert)) {
+						$cmd = new SqlInsert($tablename, $obj);
+						$cmd->bind($db);
+						$cmd_insert = $cmd;
+					}
+
+					Log::info("inserting into $tablename : $pkvalue");
+					$cmd = $cmd_insert;
+					$cmd->execute($obj);
+
+
+				} else {
+					if ($row['md5checksum']!=$rowcek['md5checksum']) {
+						// update
+						if (!isset($cmd_update)) {
+							$cmd = new SqlUpdate($tablename, $obj, [$primarykey]);
+							$cmd->bind($db);
+							$cmd_update = $cmd;
+						}
+
+						Log::info("updating $tablename : $pkvalue");
+						$cmd = $cmd_update;
+						$cmd->execute($obj);
+
+						
+					}
+				}
+			}
+
 		} catch (\Exception $ex) {
 			throw $ex;
 		}

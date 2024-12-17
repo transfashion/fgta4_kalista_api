@@ -1,8 +1,9 @@
 <?php declare(strict_types=1);
 namespace Transfashion\KalistaApi\TransbrowserInv;
 
-use AgungDhewe\PhpSqlUtil\SqlSelect;
-use AgungDhewe\PhpSqlUtil\SqlInsert;
+
+
+
 
 use Transfashion\KalistaApi\Api;
 use Transfashion\KalistaApi\Configuration;
@@ -50,31 +51,16 @@ final class InvCls extends Api {
 			$rootDir = Configuration::GetRootDir();
 			$file = join(DIRECTORY_SEPARATOR, [$rootDir, 'data', $filename]);
 
+			$self = $this;
+			$createTableObject = function($row) use ($self) {
+				return $self->createInvclsObject($row);
+			};			
 
 			$tablename = "tmp_invcls";
+			$primarykey = "invcls_id";
 			$csv = HCsv::Open($file);
-			while ($row=$csv->readline()) {
-				$obj = $this->createInvclsObject($row);
-
-				if (!isset($cmd_cek)) {
-					$cek = new \stdClass;
-					$cek->invcls_id = $row['invcls_id'];
-					$cmd = new SqlSelect($tablename , $cek);
-					$cmd->bind($db);
-					$cmd_cek = $cmd;
-				}
-				
-
-				
-				if (!isset($cmd_insert)) {
-					
-
-				}
-
-
-			}
+			$csv->syncToTable($db, $tablename, $primarykey, $createTableObject);
 			$csv->Close();
-
 
 			$success = true;
 		} catch (\Exception $ex) {
