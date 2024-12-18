@@ -61,28 +61,6 @@ final class Data extends Api {
 	}
 
 
-	/**
-	 * @ApiMethod
-	 */
-	public function Process() : array {
-		$success = false;
-		$message = "";
-
-		try {
-
-
-			$success = true;
-		} catch (\Exception $ex) {
-			$success = false;
-			$message = $ex->getMessage();
-		} finally {
-			return [
-				"success" => $success,
-				"message" => $message
-			];
-		}
-
-	}
 
 }
 

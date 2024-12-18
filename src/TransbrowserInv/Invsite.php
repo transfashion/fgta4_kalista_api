@@ -105,7 +105,7 @@ final class Invsite extends Api {
 		$obj->md5checksum = $row['md5checksum']; 
 		return $obj;
 	}
-		/**
+	/**
 	 * @ApiMethod
 	 */
 	public function Process(string $filename) : array {
