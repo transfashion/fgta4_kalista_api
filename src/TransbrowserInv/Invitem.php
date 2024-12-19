@@ -162,10 +162,10 @@ final class Invitem extends Api {
 				// 
 				$db->query("
 					insert into tmp_invitemhistory
-					(batch, dt, region_id, region_name, branch_id, branch_name, heinv_id, heinvitem_id, heinv_art, heinv_mat, heinv_col, heinv_coldescr, heinv_size, heinv_colnum, heinv_name, heinv_priceori, heinv_priceadj, heinv_pricegross, heinv_price, heinv_pricedisc, heinv_pricenett, discflag, pcp_line, pcp_gro, pcp_ctg, gtype, gender, fit, season_group, season_id, deftype_id, RVID, RVDT, age, site_id, site_name, site_sqm, site_code, site_isclose, site_isdisabled, land_id, land_name, city_id, area_id, sitemodel_id, kalista_site_id, invcls_id, invcls_name, heinvctg_id, heinvctg_name, heinvctg_sizetag, heinvgro_id, heinvgro_name, mdflag, lastcost, total_qty, total_value)
+					(batch, dt, ye, mo, region_id, region_name, branch_id, branch_name, heinv_id, heinvitem_id, heinv_art, heinv_mat, heinv_col, heinv_coldescr, heinv_size, heinv_colnum, heinv_name, heinv_priceori, heinv_priceadj, heinv_pricegross, heinv_price, heinv_pricedisc, heinv_pricenett, discflag, pcp_line, pcp_gro, pcp_ctg, gtype, gender, fit, season_group, season_id, deftype_id, RVID, RVDT, age, site_id, site_name, site_sqm, site_code, site_isclose, site_isdisabled, land_id, land_name, city_id, area_id, sitemodel_id, kalista_site_id, invcls_id, invcls_name, heinvctg_id, heinvctg_name, heinvctg_sizetag, heinvgro_id, heinvgro_name, mdflag, lastcost, total_qty, total_value, estimated_value)
 
 					select
-					'$batch' as batch, dt, region_id, region_name, branch_id, branch_name, heinv_id, heinvitem_id, heinv_art, heinv_mat, heinv_col, heinv_coldescr, heinv_size, heinv_colnum, heinv_name, heinv_priceori, heinv_priceadj, heinv_pricegross, heinv_price, heinv_pricedisc, heinv_pricenett, discflag, pcp_line, pcp_gro, pcp_ctg, gtype, gender, fit, season_group, season_id, deftype_id, RVID, RVDT, age, site_id, site_name, site_sqm, site_code, site_isclose, site_isdisabled, land_id, land_name, city_id, area_id, sitemodel_id, kalista_site_id, invcls_id, invcls_name, heinvctg_id, heinvctg_name, heinvctg_sizetag, heinvgro_id, heinvgro_name, mdflag, lastcost, total_qty, total_value
+					'$batch' as batch, dt, YEAR(dt) as ye, MONTH(dt) as mo, region_id, region_name, branch_id, branch_name, heinv_id, heinvitem_id, heinv_art, heinv_mat, heinv_col, heinv_coldescr, heinv_size, heinv_colnum, heinv_name, heinv_priceori, heinv_priceadj, heinv_pricegross, heinv_price, heinv_pricedisc, heinv_pricenett, discflag, pcp_line, pcp_gro, pcp_ctg, gtype, gender, fit, season_group, season_id, deftype_id, RVID, RVDT, age, site_id, site_name, site_sqm, site_code, site_isclose, site_isdisabled, land_id, land_name, city_id, area_id, sitemodel_id, kalista_site_id, invcls_id, invcls_name, heinvctg_id, heinvctg_name, heinvctg_sizetag, heinvgro_id, heinvgro_name, mdflag, lastcost, total_qty, total_value, total_value as estimated_value
 					from tmp_invitemposition
 				");
 			}
@@ -522,6 +522,7 @@ final class Invitem extends Api {
 	/*
 	DROP TABLE IF EXISTS tmp_invitemhistory;
 	CREATE TABLE tmp_invitemhistory (
+		batch varchar(14),
 		dt date,
 		region_id varchar(5),
 		region_name varchar(30),
@@ -586,6 +587,9 @@ final class Invitem extends Api {
 		mdflag	varchar(10)	,
 		
 		lastcost decimal(18,2),
+		estimated_value decimal(18,2) not null default 0,
+		
+		cogs_finalperitem decimal(18,2) not null default 0,
 		total_qty int,
 		total_value decimal(18,2)
 	) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
