@@ -66,6 +66,10 @@ final class Sizetag extends Api {
 			$csv->syncToTable($db, $tablename, $primarykey, $createTableObject);
 			$csv->Close();
 
+
+			unlink($file);
+
+			
 			$success = true;
 		} catch (\Exception $ex) {
 			$success = false;

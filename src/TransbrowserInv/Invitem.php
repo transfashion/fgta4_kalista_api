@@ -57,7 +57,7 @@ final class Invitem extends Api {
 
 		try {
 			$db = $this->ConnectDatabase();
-			$db->query("delete from $tablename");
+			$db->query("delete from $tablename where region_id='$region_id'");
 
 			$this->getSizetag($db, $region_id);
 
@@ -139,6 +139,28 @@ final class Invitem extends Api {
 
 				Log::info("$site_id $heinv_id");
 			}
+
+
+
+			// Jika tanggal akhir bulan atau hari minggu, copy ke table tmp_invitemhistory
+			$copy = true;
+			if ($copy) {
+				$batch = uniqid();
+
+				// hapus dulu data existing
+				$db->query("delete from tmp_invitemhistory where region_id='$region_id' and dt='$date'");
+
+				// 
+				$db->query("
+					insert into tmp_invitemhistory
+					(batch, dt, region_id, region_name, branch_id, branch_name, heinv_id, heinvitem_id, heinv_art, heinv_mat, heinv_col, heinv_coldescr, heinv_size, heinv_colnum, heinv_name, heinv_priceori, heinv_priceadj, heinv_pricegross, heinv_price, heinv_pricedisc, heinv_pricenett, discflag, pcp_line, pcp_gro, pcp_ctg, gtype, gender, fit, season_group, season_id, deftype_id, RVID, RVDT, age, site_id, site_name, site_sqm, site_code, site_isclose, site_isdisabled, land_id, land_name, city_id, area_id, sitemodel_id, kalista_site_id, invcls_id, invcls_name, heinvctg_id, heinvctg_name, heinvctg_sizetag, heinvgro_id, heinvgro_name, mdflag, lastcost, total_qty, total_value)
+
+					select
+					'$batch' as batch, dt, region_id, region_name, branch_id, branch_name, heinv_id, heinvitem_id, heinv_art, heinv_mat, heinv_col, heinv_coldescr, heinv_size, heinv_colnum, heinv_name, heinv_priceori, heinv_priceadj, heinv_pricegross, heinv_price, heinv_pricedisc, heinv_pricenett, discflag, pcp_line, pcp_gro, pcp_ctg, gtype, gender, fit, season_group, season_id, deftype_id, RVID, RVDT, age, site_id, site_name, site_sqm, site_code, site_isclose, site_isdisabled, land_id, land_name, city_id, area_id, sitemodel_id, kalista_site_id, invcls_id, invcls_name, heinvctg_id, heinvctg_name, heinvctg_sizetag, heinvgro_id, heinvgro_name, mdflag, lastcost, total_qty, total_value
+					from tmp_invitemposition
+				");
+			}
+
 
 			$success = true;
 		} catch (\Exception $ex) {
@@ -392,8 +414,8 @@ final class Invitem extends Api {
 		$obj->site_code = $Site['site_code'];
 		$obj->site_isclose = $Site['site_isclose'];
 		$obj->site_isdisabled = $Site['site_isdisabled'];
-		$obj->location_id = $Site['location_id'];
-		$obj->location_name = $Site['location_name'];		
+		$obj->land_id = $Site['location_id'];
+		$obj->land_name = $Site['location_name'];		
 		$obj->city_id = $Site['city_id'];
 		$obj->area_id = $Site['area_id'];
 		$obj->sitemodel_id = $Site['sitemodel_id'];
@@ -461,8 +483,8 @@ final class Invitem extends Api {
 		site_code varchar(30),
 		site_isclose tinyint(1) not null default 0,
 		site_isdisabled  tinyint(1) not null default 0,
-		location_id varchar(30),
-		location_name varchar(90),
+		land_id varchar(30),
+		land_name varchar(90),
 		city_id varchar(30),
 		area_id varchar(30),
 		sitemodel_id varchar(10),
@@ -484,6 +506,81 @@ final class Invitem extends Api {
 		total_qty int,
 		total_value decimal(18,2)
 	) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+	*/
+
+
+
+	/*
+	DROP TABLE IF EXISTS tmp_invitemhistory;
+	CREATE TABLE tmp_invitemhistory (
+		dt date,
+		region_id varchar(5),
+		region_name varchar(30),
+		branch_id varchar(7),
+		branch_name varchar(30),
+		
+		-- from Heinv
+		heinv_id varchar(13),
+		heinvitem_id varchar(13),
+		heinv_art	varchar(30)	,
+		heinv_mat	varchar(30)	,
+		heinv_col	varchar(30)	,
+		heinv_coldescr	varchar(30)	,
+		heinv_size varchar(10),
+		heinv_colnum varchar(2),
+		heinv_name	varchar(255)	,
+		heinv_priceori	decimal(15,0)	,
+		heinv_priceadj	decimal(15,0)	,
+		heinv_pricegross	decimal(15,0)	,
+		heinv_price	decimal(15,0)	,
+		heinv_pricedisc	decimal(15,0)	,
+		heinv_pricenett	decimal(15,0)	,
+		discflag	varchar(10)	,
+		pcp_line	varchar(50)	,
+		pcp_gro	varchar(50)	,
+		pcp_ctg	varchar(50)	,
+		gtype	varchar(10)	,
+		gender	varchar(10)	,
+		fit	varchar(50)	,
+		season_group	varchar(20)	,
+		season_id	varchar(10)	,
+		deftype_id	varchar(10)	,
+		RVID	varchar(30)	,
+		RVDT	date	,
+		age	int	,
+		
+
+		-- from Site
+		site_id varchar(30),
+		site_name varchar(90),
+		site_sqm decimal(12,2),
+		site_code varchar(30),
+		site_isclose tinyint(1) not null default 0,
+		site_isdisabled  tinyint(1) not null default 0,
+		land_id varchar(30),
+		land_name varchar(90),
+		city_id varchar(30),
+		area_id varchar(30),
+		sitemodel_id varchar(10),
+		kalista_site_id varchar(30),
+
+		-- from invCls
+		invcls_id varchar(30),
+		invcls_name varchar(100),
+
+		-- from Category
+		heinvctg_id	varchar(10),
+		heinvctg_name	varchar(50)	,
+		heinvctg_sizetag	varchar(5)	,
+		heinvgro_id	varchar(10),
+		heinvgro_name	varchar(30),
+		mdflag	varchar(10)	,
+		
+		lastcost decimal(18,2),
+		total_qty int,
+		total_value decimal(18,2)
+	) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+
 	*/
 
 }

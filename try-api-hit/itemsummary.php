@@ -12,7 +12,7 @@ $datetime = new \DateTime("now", new \DateTimeZone("UTC"));
 // Data yang akan dikirim
 $data = [
 	"request" => [
-		"date" => '2024-12-17',
+		"date" => '2024-12-18',
 		'region_id' => '00900'
 	]
 ];
