@@ -9,8 +9,10 @@ use Transfashion\KalistaApi\Configuration;
 use Transfashion\KalistaApi\Database;
 use Transfashion\KalistaApi\Log;
 
+use \DateTime;
 use \PDO;
 use \PDOStatement;
+
 
 final class Invitem extends Api {
 
@@ -143,7 +145,14 @@ final class Invitem extends Api {
 
 
 			// Jika tanggal akhir bulan atau hari minggu, copy ke table tmp_invitemhistory
-			$copy = true;
+			$copy = false;
+			$datetime = new DateTime($date);
+			$isSunday = $datetime->format('l') === 'Sunday';
+			$isEndOfMonth = $datetime->format('t') == $datetime->format('d');
+			if ($isSunday || $isEndOfMonth) {
+				$copy = true;
+			}
+
 			if ($copy) {
 				$batch = uniqid();
 
