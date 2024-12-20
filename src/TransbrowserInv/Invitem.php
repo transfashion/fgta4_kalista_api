@@ -162,10 +162,10 @@ final class Invitem extends Api {
 				// 
 				$db->query("
 					insert into tmp_invitemhistory
-					(batch, dt, ye, mo, region_id, region_name, branch_id, branch_name, heinv_id, heinvitem_id, heinv_art, heinv_mat, heinv_col, heinv_coldescr, heinv_size, heinv_colnum, heinv_name, heinv_priceori, heinv_priceadj, heinv_pricegross, heinv_price, heinv_pricedisc, heinv_pricenett, discflag, pcp_line, pcp_gro, pcp_ctg, gtype, gender, fit, season_group, season_id, deftype_id, RVID, RVDT, age, site_id, site_name, site_sqm, site_code, site_isclose, site_isdisabled, land_id, land_name, city_id, area_id, sitemodel_id, kalista_site_id, invcls_id, invcls_name, heinvctg_id, heinvctg_name, heinvctg_sizetag, heinvgro_id, heinvgro_name, mdflag, lastcost, total_qty, total_value, estimated_value)
+					(batch, dt, ye, mo, region_id, region_name, branch_id, branch_name, heinv_id, heinvitem_id, heinv_size, heinv_colnum, heinv_priceori, heinv_priceadj, heinv_pricegross, heinv_price, heinv_pricedisc, heinv_pricenett, discflag,  season_group, season_id, deftype_id, RVID, RVDT, age, site_id, land_id, city_id, area_id, sitemodel_id, invcls_id, heinvctg_id, heinvctg_sizetag, heinvgro_id, mdflag, lastcost, total_qty, total_value, estimated_value)
 
 					select
-					'$batch' as batch, dt, YEAR(dt) as ye, MONTH(dt) as mo, region_id, region_name, branch_id, branch_name, heinv_id, heinvitem_id, heinv_art, heinv_mat, heinv_col, heinv_coldescr, heinv_size, heinv_colnum, heinv_name, heinv_priceori, heinv_priceadj, heinv_pricegross, heinv_price, heinv_pricedisc, heinv_pricenett, discflag, pcp_line, pcp_gro, pcp_ctg, gtype, gender, fit, season_group, season_id, deftype_id, RVID, RVDT, age, site_id, site_name, site_sqm, site_code, site_isclose, site_isdisabled, land_id, land_name, city_id, area_id, sitemodel_id, kalista_site_id, invcls_id, invcls_name, heinvctg_id, heinvctg_name, heinvctg_sizetag, heinvgro_id, heinvgro_name, mdflag, lastcost, total_qty, total_value, total_value as estimated_value
+					'$batch' as batch, dt, YEAR(dt) as ye, MONTH(dt) as mo, region_id, region_name, branch_id, branch_name, heinv_id, heinvitem_id, heinv_size, heinv_colnum, heinv_priceori, heinv_priceadj, heinv_pricegross, heinv_price, heinv_pricedisc, heinv_pricenett, discflag,  season_group, season_id, deftype_id, RVID, RVDT, age, site_id, land_id, city_id, area_id, sitemodel_id, invcls_id, heinvctg_id, heinvctg_sizetag, heinvgro_id, mdflag, lastcost, total_qty, total_value, total_value as estimated_value
 					from tmp_invitemposition
 				");
 			}
