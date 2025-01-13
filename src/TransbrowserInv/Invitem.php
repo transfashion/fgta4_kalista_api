@@ -166,7 +166,7 @@ final class Invitem extends Api {
 
 					select
 					'$batch' as batch, dt, YEAR(dt) as ye, MONTH(dt) as mo, region_id, region_name, branch_id, branch_name, heinv_id, heinvitem_id, heinv_size, heinv_colnum, heinv_priceori, heinv_priceadj, heinv_pricegross, heinv_price, heinv_pricedisc, heinv_pricenett, discflag,  season_group, season_id, deftype_id, RVID, RVDT, age, site_id, land_id, city_id, area_id, sitemodel_id, invcls_id, heinvctg_id, heinvctg_sizetag, heinvgro_id, mdflag, lastcost, total_qty, total_value, total_value as estimated_value
-					from tmp_invitemposition
+					from tmp_invitemposition where region_id='$region_id'
 				");
 			}
 
