@@ -87,6 +87,9 @@ final class Heinv extends Api {
 		$obj->RVID = $row['RVID']; 
 		$obj->RVDT = $row['RVDT']; 
 		$obj->age = $row['age']; 
+		$obj->order_id = $row['order_id'] == '' ? null :  $row['order_id'];
+		$obj->heinv_fob = $row['heinv_fob'] == '' ? null : $row['heinv_fob'];
+		$obj->curr_id = $row['curr_id'] == '' ? null : $row['curr_id'];
 		$obj->lastcost = $row['lastcost']; 
 		$obj->md5checksum = $row['md5checksum']; 
 		return $obj;

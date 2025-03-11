@@ -162,10 +162,10 @@ final class Invitem extends Api {
 				// 
 				$db->query("
 					insert into tmp_invitemhistory
-					(batch, dt, ye, mo, region_id, region_name, branch_id, branch_name, heinv_id, heinvitem_id, heinv_size, heinv_colnum, heinv_priceori, heinv_priceadj, heinv_pricegross, heinv_price, heinv_pricedisc, heinv_pricenett, discflag,  season_group, season_id, deftype_id, RVID, RVDT, age, site_id, land_id, city_id, area_id, sitemodel_id, invcls_id, heinvctg_id, heinvctg_sizetag, heinvgro_id, mdflag, lastcost, total_qty, total_value, estimated_value)
+					(batch, dt, ye, mo, region_id, region_name, branch_id, branch_name, heinv_id, heinvitem_id, heinv_size, heinv_colnum, heinv_priceori, heinv_priceadj, heinv_pricegross, heinv_price, heinv_pricedisc, heinv_pricenett, discflag,  season_group, season_id, deftype_id, RVID, RVDT, age, site_id, land_id, city_id, area_id, sitemodel_id, invcls_id, heinvctg_id, heinvctg_sizetag, heinvgro_id, mdflag, lastcost, total_qty, total_value, estimated_value, order_id, heinv_fob, curr_id)
 
 					select
-					'$batch' as batch, dt, YEAR(dt) as ye, MONTH(dt) as mo, region_id, region_name, branch_id, branch_name, heinv_id, heinvitem_id, heinv_size, heinv_colnum, heinv_priceori, heinv_priceadj, heinv_pricegross, heinv_price, heinv_pricedisc, heinv_pricenett, discflag,  season_group, season_id, deftype_id, RVID, RVDT, age, site_id, land_id, city_id, area_id, sitemodel_id, invcls_id, heinvctg_id, heinvctg_sizetag, heinvgro_id, mdflag, lastcost, total_qty, total_value, total_value as estimated_value
+					'$batch' as batch, dt, YEAR(dt) as ye, MONTH(dt) as mo, region_id, region_name, branch_id, branch_name, heinv_id, heinvitem_id, heinv_size, heinv_colnum, heinv_priceori, heinv_priceadj, heinv_pricegross, heinv_price, heinv_pricedisc, heinv_pricenett, discflag,  season_group, season_id, deftype_id, RVID, RVDT, age, site_id, land_id, city_id, area_id, sitemodel_id, invcls_id, heinvctg_id, heinvctg_sizetag, heinvgro_id, mdflag, lastcost, total_qty, total_value, total_value as estimated_value, order_id, heinv_fob, curr_id    
 					from tmp_invitemposition where region_id='$region_id'
 				");
 			}
@@ -415,6 +415,11 @@ final class Invitem extends Api {
 		}
 		$obj->age = $Heinv['age'];
 		$obj->lastcost = (float)$Heinv['lastcost'];
+
+		$obj->order_id = $Heinv['order_id'];
+		$obj->heinv_fob = (float)$Heinv['heinv_fob'];
+		$obj->curr_id = $Heinv['curr_id'];
+
 
 		/* lookup from Site */
 		$obj->site_id = $site_id;
