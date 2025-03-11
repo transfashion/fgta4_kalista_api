@@ -15,6 +15,13 @@ final class Log {
 			}
 			self::$_logoutput = $logoutput;
 			self::$_maxsize = $logmaxsize;
+
+
+			$logSize = filesize(self::$_logoutput);
+			if ($logSize > self::$_maxsize) {
+				file_put_contents(self::$_logoutput, "");
+			}		
+
 		} catch (\Exception $ex) {
 			throw $ex;
 		}
